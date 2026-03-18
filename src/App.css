@@ -1,38 +1,60 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  /* Removed conflicting light theme styles */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Import Inter from Google Fonts (add to public/index.html) */
+/* <link href="https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&display=swap" rel="stylesheet"> */
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  border-bottom: 1px solid #e6e6e8;
+  padding-bottom: 0.75rem;
+  margin: 3rem 0 2rem;
+}
+
+/* Trust section */
+.trust-grid {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: space-between;
+  margin: 2rem 0 4rem;
+}
+.trust-item {
+  display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 0.75rem;
+  font-size: 1.125rem;
+  color: #2d2d2f;
+  background: #fafafa;
+  padding: 1rem 1.8rem;
+  border-radius: 60px;
+  border: 1px solid #e6e6e8;
+  transition: all 0.2s ease;
 }
-
-.App-link {
-  color: #61dafb;
+.trust-item i {
+  font-size: 1.5rem;
+  color: #000;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.trust-item:hover {
+  background: #000;
+  color: #fff;
+  border-color: #000;
+}
+.trust-item:hover i {
+  color: #fff;
 }

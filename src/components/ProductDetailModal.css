@@ -1,0 +1,99 @@
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.5);
+  backdrop-filter: blur(5px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.2s ease;
+}
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+.modal-content {
+  background: #fff;
+  border-radius: 32px;
+  max-width: 900px;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 2rem;
+  position: relative;
+  box-shadow: 0 40px 60px rgba(0,0,0,0.2);
+  animation: slideUp 0.3s ease;
+}
+@keyframes slideUp { from { transform: translateY(20px); } to { transform: translateY(0); } }
+
+.close-btn {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #6e6e73;
+  transition: color 0.2s;
+  line-height: 1;
+}
+.close-btn:hover { color: #000; }
+
+.modal-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+.modal-image img {
+  width: 100%;
+  height: auto;
+}
+.modal-info h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  border: none;
+}
+.modal-price {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0.5rem 0;
+}
+.stock {
+  color: #c00;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+.exclusive-badge.large {
+  background: #000;
+  color: white;
+  padding: 0.5rem 1.5rem;
+  border-radius: 40px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  display: inline-block;
+  margin: 1rem 0;
+}
+.description {
+  color: #6e6e73;
+  margin: 1.5rem 0;
+  line-height: 1.6;
+}
+.reserve-btn {
+  background: #000;
+  color: #fff;
+  border: none;
+  padding: 1rem 2.5rem;
+  border-radius: 60px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  width: 100%;
+}
+.reserve-btn:hover {
+  background: #333;
+  transform: scale(1.02);
+}
+@media (max-width: 700px) {
+  .modal-grid { grid-template-columns: 1fr; }
+}

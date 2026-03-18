@@ -1,0 +1,1108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pasy Phones | Premium Devices</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #000000;
+            --text-color: #ffffff;
+            --card-bg: #111111;
+            --accent-color: #ffffff;
+            --border-color: #333333;
+            --muted-text: #888888;
+            --success-color: #32d74b;
+            --chat-bg: #25D366;
+            --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg-color);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #444;
+            border-radius: 4px;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Nav */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1.5rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            text-transform: uppercase;
+            cursor: pointer;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            opacity: 0.7;
+        }
+
+        /* Hero */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 5%;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 6vw, 5.5rem);
+            font-weight: 700;
+            letter-spacing: -2px;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeUp 1s forwards 0.2s;
+        }
+
+        .hero p {
+            font-size: clamp(1.1rem, 2vw, 1.4rem);
+            color: var(--muted-text);
+            max-width: 600px;
+            margin-bottom: 3rem;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeUp 1s forwards 0.4s;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            border-radius: 100px;
+            border: none;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: var(--accent-color);
+            color: var(--bg-color);
+        }
+
+        .btn-primary:hover {
+            transform: scale(1.05);
+            background: #e0e0e0;
+            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.1);
+        }
+
+        .hero-img-wrapper {
+            margin-top: 4rem;
+            width: 100%;
+            max-width: 1000px;
+            height: 400px;
+            border-radius: 24px;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(40px);
+            animation: fadeUp 1s forwards 0.6s;
+            position: relative;
+        }
+
+        .hero-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.8);
+            transition: var(--transition);
+        }
+
+        .hero-img-wrapper:hover img {
+            transform: scale(1.03);
+            filter: brightness(1);
+        }
+
+        /* Sections */
+        section {
+            padding: 8rem 5%;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            letter-spacing: -1px;
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            color: var(--muted-text);
+            font-size: 1.1rem;
+        }
+
+        /* Products Grid */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .product-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 2.5rem;
+            text-align: center;
+            transition: var(--transition);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            border-color: #555;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        .badge {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            color: var(--accent-color);
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: contain;
+            margin-bottom: 2rem;
+            transition: var(--transition);
+        }
+
+        .product-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .product-info h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.5px;
+        }
+
+        .product-info .price {
+            font-size: 1.25rem;
+            color: var(--muted-text);
+            font-weight: 500;
+        }
+
+        /* Trust Section */
+        .trust-section {
+            background: var(--card-bg);
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .trust-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .trust-item h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            letter-spacing: -0.5px;
+        }
+
+        .trust-item p {
+            color: var(--muted-text);
+            line-height: 1.6;
+        }
+
+        .trust-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Modal */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: var(--transition);
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .modal-content {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            width: 90%;
+            max-width: 900px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            overflow: hidden;
+            transform: scale(0.95);
+            transition: var(--transition);
+            position: relative;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8);
+        }
+
+        .modal-overlay.active .modal-content {
+            transform: scale(1);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 10;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: var(--transition);
+        }
+
+        .modal-close:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: rotate(90deg);
+        }
+
+        .modal-img-container {
+            background: #0a0a0a;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 3rem;
+            border-right: 1px solid var(--border-color);
+        }
+
+        .modal-img-container img {
+            width: 100%;
+            max-width: 300px;
+            object-fit: contain;
+        }
+
+        .modal-info {
+            padding: 3rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .modal-info h2 {
+            font-size: 2rem;
+            letter-spacing: -1px;
+            margin-bottom: 0.5rem;
+        }
+
+        .modal-info .price {
+            font-size: 1.5rem;
+            color: var(--muted-text);
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+
+        .stock-indicator {
+            color: #ff3b30;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .stock-indicator::before {
+            content: '';
+            display: block;
+            width: 8px;
+            height: 8px;
+            background: #ff3b30;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        /* Form */
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--muted-text);
+            font-weight: 500;
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 1rem;
+            background: #000;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            color: white;
+            font-size: 1rem;
+            outline: none;
+            transition: var(--transition);
+        }
+
+        .form-group input:focus, .form-group select:focus {
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1);
+        }
+        
+        .form-group select {
+            appearance: none;
+        }
+
+        /* Success Message */
+        .success-msg {
+            display: none;
+            text-align: center;
+            padding: 2rem 0;
+            animation: fadeIn 0.5s forwards;
+        }
+
+        .success-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(50, 215, 75, 0.1);
+            color: var(--success-color);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+            margin: 0 auto 1.5rem;
+        }
+
+        .success-msg h3 {
+            color: var(--success-color);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .success-msg p {
+            color: var(--muted-text);
+            line-height: 1.5;
+        }
+
+        /* Chat Component */
+        .chat-widget {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 999;
+        }
+
+        .chat-btn {
+            width: 60px;
+            height: 60px;
+            background: var(--chat-bg);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3);
+            transition: var(--transition);
+        }
+
+        .chat-btn:hover {
+            transform: scale(1.1) rotate(10deg);
+        }
+
+        .chat-btn svg {
+            width: 30px;
+            height: 30px;
+            fill: white;
+        }
+
+        .chat-box {
+            position: absolute;
+            bottom: 80px;
+            right: 0;
+            width: 320px;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            overflow: hidden;
+            opacity: 0;
+            pointer-events: none;
+            transform: translateY(20px);
+            transition: var(--transition);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        .chat-box.active {
+            opacity: 1;
+            pointer-events: all;
+            transform: translateY(0);
+        }
+
+        .chat-header {
+            background: #1a1a1a;
+            padding: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .chat-header .agent-avatar {
+            width: 40px;
+            height: 40px;
+            background: #333;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .chat-header h4 {
+            font-weight: 600;
+        }
+        
+        .chat-header p {
+            font-size: 0.8rem;
+            color: var(--success-color);
+        }
+
+        .chat-body {
+            padding: 1.5rem;
+            height: 250px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .chat-msg {
+            background: #222;
+            padding: 1rem;
+            border-radius: 15px;
+            border-bottom-left-radius: 4px;
+            font-size: 0.9rem;
+            align-self: flex-start;
+            max-width: 85%;
+            line-height: 1.5;
+        }
+
+        .chat-footer {
+            padding: 1.2rem;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            background: #1a1a1a;
+        }
+
+        .chat-input {
+            width: 100%;
+            padding: 1rem;
+            background: #000;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            color: white;
+            outline: none;
+            resize: none;
+        }
+
+        .btn-whatsapp {
+            background: var(--chat-bg);
+            color: white;
+            width: 100%;
+            padding: 0.8rem;
+            border-radius: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .btn-whatsapp:hover {
+            background: #1ebc5a;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Fake Notification */
+        .notification-toast {
+            position: fixed;
+            bottom: 2rem;
+            left: 2rem;
+            background: rgba(20, 20, 20, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 1.5rem;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            transform: translateY(150%);
+            opacity: 0;
+            transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            z-index: 900;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
+            max-width: 350px;
+        }
+
+        .notification-toast.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .notif-img {
+            width: 45px;
+            height: 45px;
+            border-radius: 10px;
+            object-fit: cover;
+            background: #fff;
+        }
+
+        .notif-text {
+            flex: 1;
+        }
+
+        .notif-text p {
+            font-size: 0.9rem;
+            margin: 0 0 0.2rem 0;
+            line-height: 1.3;
+        }
+
+        .notif-text strong {
+            color: var(--accent-color);
+        }
+
+        .notif-time {
+            font-size: 0.75rem;
+            color: var(--muted-text);
+        }
+
+        /* Animations */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(255, 59, 48, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(255, 59, 48, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 59, 48, 0); }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .modal-content {
+                grid-template-columns: 1fr;
+                height: 90vh;
+                overflow-y: auto;
+            }
+            .modal-img-container {
+                border-right: none;
+                border-bottom: 1px solid var(--border-color);
+                padding: 2rem;
+                min-height: 250px;
+            }
+            .modal-img-container img { max-height: 200px; }
+            .modal-info { padding: 2rem; }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .chat-widget { right: 1rem; bottom: 1rem; }
+            .chat-box { right: 0; width: calc(100vw - 2rem); }
+            .notification-toast {
+                left: 1rem;
+                right: 1rem;
+                bottom: auto;
+                top: 1rem;
+                transform: translateY(-150%);
+                max-width: none;
+            }
+            .notification-toast.show { transform: translateY(0); }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <nav>
+        <div class="logo">Pasy Phones</div>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#featured">Featured</a>
+            <a href="#deals">Deals</a>
+            <a href="#trust">Why Us</a>
+        </div>
+        <a href="#featured" class="btn btn-primary" style="padding: 0.6rem 1.5rem; font-size: 0.9rem;">Shop Now</a>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <h1>Premium Devices.<br>Trusted Quality.</h1>
+        <p>Experience the pinnacle of technology. Authentic devices, unmatched warranty, and priority customer service.</p>
+        <a href="#featured" class="btn btn-primary">Discover Collection</a>
+        
+        <div class="hero-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1616348436168-de43ad0db179?auto=format&fit=crop&q=80&w=1600" alt="Premium Devices">
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section id="featured">
+        <div class="section-header reveal">
+            <h2>Featured Devices</h2>
+            <p>The finest selection of the latest technology</p>
+        </div>
+        
+        <div class="products-grid" id="products-container">
+            <!-- Populated by JS -->
+        </div>
+    </section>
+
+    <!-- Today's Deals -->
+    <section id="deals" style="background: var(--card-bg); border-top: 1px solid var(--border-color);">
+        <div class="section-header reveal">
+            <h2>Today's Deals</h2>
+            <p>Exclusive online offers available for a limited time</p>
+        </div>
+        
+        <div class="products-grid" id="deals-container">
+            <!-- Populated by JS -->
+        </div>
+    </section>
+
+    <!-- Trust Section -->
+    <section id="trust" class="trust-section">
+        <div class="section-header reveal">
+            <h2>The Pasy Standard</h2>
+            <p>Why premium clients choose us for their technology needs</p>
+        </div>
+        
+        <div class="trust-grid">
+            <div class="trust-item reveal">
+                <div class="trust-icon">🛡️</div>
+                <h3>100% Authentic</h3>
+                <p>Every device is strictly vetted and guaranteed original. No compromises on quality.</p>
+            </div>
+            <div class="trust-item reveal" style="transition-delay: 0.1s;">
+                <div class="trust-icon">⚡</div>
+                <h3>Express Delivery</h3>
+                <p>Priority secure shipping directly to your hands in record time.</p>
+            </div>
+            <div class="trust-item reveal" style="transition-delay: 0.2s;">
+                <div class="trust-icon">💎</div>
+                <h3>Premium Warranty</h3>
+                <p>Extended in-house protection plans for complete peace of mind.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="padding: 4rem 5%; background: #0a0a0a; border-top: 1px solid var(--border-color); text-align: center; color: var(--muted-text);">
+        <div class="logo" style="margin-bottom: 1rem; color: white;">Pasy Phones</div>
+        <p>&copy; 2026 Pasy Phones. All rights reserved.</p>
+    </footer>
+
+    <!-- Product Modal -->
+    <div class="modal-overlay" id="product-modal">
+        <div class="modal-content">
+            <button class="modal-close" id="close-modal">&times;</button>
+            
+            <div class="modal-img-container">
+                <img id="modal-image" src="" alt="Product">
+            </div>
+            
+            <div class="modal-info">
+                <div class="badge" style="position: relative; top: 0; left: 0; display: inline-block; margin-bottom: 1rem;">Online Exclusive Price</div>
+                <h2 id="modal-title">Device Name</h2>
+                <div class="price" id="modal-price">$0</div>
+                
+                <div class="stock-indicator" id="modal-stock">
+                    Only 3 left in stock
+                </div>
+
+                <!-- Form -->
+                <form id="reservation-form">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" required placeholder="John Doe">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" required placeholder="+1 234 567 8900">
+                    </div>
+                    <div class="form-group">
+                        <label for="time">Preferred Pickup Time</label>
+                        <select id="time" required>
+                            <option value="">Select a time</option>
+                            <option value="morning">Morning (9AM - 12PM)</option>
+                            <option value="afternoon">Afternoon (12PM - 4PM)</option>
+                            <option value="evening">Evening (4PM - 7PM)</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Reserve Now</button>
+                    <p style="text-align: center; margin-top: 1rem; font-size: 0.8rem; color: var(--muted-text);">No payment required today.</p>
+                </form>
+
+                <!-- Success Message -->
+                <div class="success-msg" id="reservation-success">
+                    <div class="success-icon">✓</div>
+                    <h3>Reservation Confirmed</h3>
+                    <p>Your request has been securely sent. Our premium sales team will contact you shortly to finalize the details.</p>
+                    <button class="btn btn-outline" style="margin-top: 2rem; border: 1px solid #333; color: white; background: transparent; width: 100%; border-radius: 12px; padding: 1rem;" onclick="document.getElementById('close-modal').click()">Continue Shopping</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chat Widget -->
+    <div class="chat-widget">
+        <div class="chat-box" id="chat-box">
+            <div class="chat-header">
+                <div class="agent-avatar">👤</div>
+                <div>
+                    <h4>Pasy Support</h4>
+                    <p>● Online</p>
+                </div>
+            </div>
+            <div class="chat-body">
+                <div class="chat-msg">
+                    Hello! Welcome to Pasy Phones. 👋<br><br>Let me know if you are looking for a specific device, or if you need help reserving an item today.
+                </div>
+            </div>
+            <div class="chat-footer">
+                <textarea class="chat-input" id="chat-input" rows="2" placeholder="Type your message..."></textarea>
+                <button class="btn btn-whatsapp" onclick="redirectToWhatsApp()">
+                    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.82 9.82 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+                    Continue on WhatsApp
+                </button>
+            </div>
+        </div>
+        
+        <div class="chat-btn" id="chat-toggle">
+            <svg viewBox="0 0 24 24"><path d="M12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.82 11.82 0 0 0 12.05 0z" fill="white"/></svg>
+        </div>
+    </div>
+
+    <!-- Fake Notification -->
+    <div class="notification-toast" id="fake-notif">
+        <img id="notif-img" class="notif-img" src="" alt="Product">
+        <div class="notif-text">
+            <p id="notif-message"></p>
+            <div class="notif-time" id="notif-time">Just now</div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        // Data
+        const products = [
+            {
+                id: 1,
+                name: "iPhone 15 Pro Max",
+                price: "$1,199",
+                img: "https://images.unsplash.com/photo-1695048133142-1a20484d2569?auto=format&fit=crop&q=80&w=800",
+                stock: 3,
+                badge: "Top Seller",
+                category: "featured"
+            },
+            {
+                id: 2,
+                name: "MacBook Pro M3",
+                price: "$1,599",
+                img: "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&q=80&w=800",
+                stock: 2,
+                badge: "Premium Design",
+                category: "featured"
+            },
+            {
+                id: 3,
+                name: "AirPods Max",
+                price: "$549",
+                img: "https://images.unsplash.com/photo-1628202926206-c63a34b19fb2?auto=format&fit=crop&q=80&w=800",
+                stock: 5,
+                badge: "Pro Audio",
+                category: "featured"
+            },
+            {
+                id: 4,
+                name: "iPad Pro 12.9\"",
+                price: "$999",
+                img: "https://images.unsplash.com/photo-1588702545928-11f2a32ba815?auto=format&fit=crop&q=80&w=800",
+                stock: 1,
+                badge: "Deal of the Day",
+                category: "deals"
+            },
+            {
+                id: 5,
+                name: "Apple Watch Ultra 2",
+                price: "$799",
+                img: "https://images.unsplash.com/photo-1434493789847-2902a520c1ca?auto=format&fit=crop&q=80&w=800",
+                stock: 4,
+                badge: "15% Off",
+                category: "deals"
+            }
+        ];
+
+        // Render Products
+        function renderProducts() {
+            const featuredContainer = document.getElementById('products-container');
+            const dealsContainer = document.getElementById('deals-container');
+
+            products.forEach(product => {
+                const cardHTML = `
+                    <div class="product-card reveal" onclick="openModal(${product.id})">
+                        ${product.badge ? `<div class="badge">${product.badge}</div>` : ''}
+                        <img src="${product.img}" alt="${product.name}">
+                        <div class="product-info">
+                            <h3>${product.name}</h3>
+                            <div class="price">${product.price}</div>
+                        </div>
+                    </div>
+                `;
+
+                if (product.category === 'featured') {
+                    featuredContainer.innerHTML += cardHTML;
+                } else {
+                    dealsContainer.innerHTML += cardHTML;
+                }
+            });
+        }
+
+        // Scroll Reveal Animation
+        function exposeReveal() {
+            const reveals = document.querySelectorAll('.reveal');
+            const windowHeight = window.innerHeight;
+            
+            reveals.forEach(reveal => {
+                const elementTop = reveal.getBoundingClientRect().top;
+                if (elementTop < windowHeight - 50) {
+                    reveal.classList.add('active');
+                }
+            });
+        }
+
+        // Modal Logic
+        const modal = document.getElementById('product-modal');
+        const closeModal = document.getElementById('close-modal');
+        const form = document.getElementById('reservation-form');
+        const successBlock = document.getElementById('reservation-success');
+
+        function openModal(id) {
+            const product = products.find(p => p.id === id);
+            if (!product) return;
+
+            // Populate Data
+            document.getElementById('modal-image').src = product.img;
+            document.getElementById('modal-title').textContent = product.name;
+            document.getElementById('modal-price').textContent = product.price;
+            document.getElementById('modal-stock').innerHTML = `Only ${product.stock} left in stock`;
+
+            // Reset States
+            form.style.display = 'block';
+            successBlock.style.display = 'none';
+            form.reset();
+
+            // Show Modal
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        closeModal.addEventListener('click', () => {
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+
+        // Close on click outside
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Form Submit Simulation
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            form.style.display = 'none';
+            successBlock.style.display = 'block';
+        });
+
+        // Chat UI
+        const chatToggle = document.getElementById('chat-toggle');
+        const chatBox = document.getElementById('chat-box');
+
+        chatToggle.addEventListener('click', () => {
+            chatBox.classList.toggle('active');
+        });
+
+        function redirectToWhatsApp() {
+            const input = document.getElementById('chat-input').value;
+            const message = input.trim() !== '' ? input : "Hello, I am interested in exploring your premium devices.";
+            const url = `https://wa.me/237600000000?text=${encodeURIComponent(message)}`;
+            window.open(url, '_blank');
+        }
+
+        // Fake Notifications System
+        const notificationsData = [
+            { name: "Michael from Dubai", action: "just reserved an", product: "iPhone 15 Pro Max" },
+            { name: "Sarah from London", action: "just ordered a", product: "MacBook Pro M3" },
+            { name: "David from New York", action: "just bought", product: "AirPods Max" },
+            { name: "Jessica from Paris", action: "just reserved an", product: "Apple Watch Ultra" }
+        ];
+
+        function triggerFakeNotification() {
+            const notif = document.getElementById('fake-notif');
+            
+            // Randomize Data
+            const randomPerson = notificationsData[Math.floor(Math.random() * notificationsData.length)];
+            const randomProduct = products[Math.floor(Math.random() * products.length)];
+            
+            document.getElementById('notif-img').src = randomProduct.img;
+            document.getElementById('notif-message').innerHTML = `<strong>${randomPerson.name}</strong> ${randomPerson.action} <strong>${randomProduct.name}</strong>.`;
+            
+            // Time string logic (1 to 5 mins ago)
+            const mins = Math.floor(Math.random() * 5) + 1;
+            document.getElementById('notif-time').textContent = `${mins} min${mins > 1 ? 's' : ''} ago`;
+
+            // Show animation
+            notif.classList.add('show');
+
+            // Hide after 5 seconds
+            setTimeout(() => {
+                notif.classList.remove('show');
+            }, 5000);
+        }
+
+        // Initialize Everything
+        window.addEventListener('DOMContentLoaded', () => {
+            renderProducts();
+            exposeReveal();
+            window.addEventListener('scroll', exposeReveal);
+
+            // Trigger first notification after 10 seconds
+            setTimeout(() => {
+                triggerFakeNotification();
+                // Then repeat roughly every 20-30 seconds
+                setInterval(triggerFakeNotification, 25000);
+            }, 10000);
+            
+            // Auto open chat box after 5 seconds to grab attention
+            setTimeout(() => {
+                if(!chatBox.classList.contains('active')) {
+                    chatBox.classList.add('active');
+                }
+            }, 5000);
+        });
+    </script>
+</body>
+</html>

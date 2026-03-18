@@ -1,0 +1,27 @@
+.fake-notification {
+  position: fixed;
+  bottom: 100px;
+  left: 30px;
+  background: #000;
+  color: #fff;
+  padding: 0.8rem 1.5rem;
+  border-radius: 60px;
+  font-size: 0.9rem;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  z-index: 150;
+  animation: slideIn 0.3s ease, fadeOut 0.5s ease 3.5s forwards;
+}
+@keyframes slideIn {
+  from { transform: translateX(-30px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+@keyframes fadeOut {
+  to { opacity: 0; transform: translateY(10px); visibility: hidden; }
+}
+.fake-notification i {
+  color: #fff;
+  font-size: 1rem;
+}
