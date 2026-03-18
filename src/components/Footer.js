@@ -20,20 +20,20 @@ const Footer = () => {
         <div style={{ flex: '1 1 150px' }}>
           <h4 style={{ color: '#fff', marginBottom: '1.5rem', fontWeight: '600' }}>Products</h4>
           <ul style={{ listStyle: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: '0.8rem', fontSize: '0.9rem' }}>
-            <li><a href="#" style={{ color: '#888', textDecoration: 'none', transition: 'color 0.2s' }} onMouseOver={e => e.target.style.color='#fff'} onMouseOut={e => e.target.style.color='#888'}>iPhone 17 Pro</a></li>
-            <li><a href="#" style={{ color: '#888', textDecoration: 'none', transition: 'color 0.2s' }} onMouseOver={e => e.target.style.color='#fff'} onMouseOut={e => e.target.style.color='#888'}>MacBook Pro M4</a></li>
-            <li><a href="#" style={{ color: '#888', textDecoration: 'none', transition: 'color 0.2s' }} onMouseOver={e => e.target.style.color='#fff'} onMouseOut={e => e.target.style.color='#888'}>AirPods Max</a></li>
-            <li><a href="#" style={{ color: '#888', textDecoration: 'none', transition: 'color 0.2s' }} onMouseOver={e => e.target.style.color='#fff'} onMouseOut={e => e.target.style.color='#888'}>Watch Ultra</a></li>
+            <li><a href="#home" style={{ color: '#888', textDecoration: 'none', transition: 'color 0.2s' }} onMouseOver={e => e.target.style.color='#fff'} onMouseOut={e => e.target.style.color='#888'}>iPhone 17 Pro</a></li>
+            <li><a href="#products" style={{ color: '#888', textDecoration: 'none', transition: 'color 0.2s' }} onMouseOver={e => e.target.style.color='#fff'} onMouseOut={e => e.target.style.color='#888'}>MacBook Pro M4</a></li>
+            <li><a href="#products" style={{ color: '#888', textDecoration: 'none', transition: 'color 0.2s' }} onMouseOver={e => e.target.style.color='#fff'} onMouseOut={e => e.target.style.color='#888'}>AirPods Max</a></li>
+            <li><a href="#products" style={{ color: '#888', textDecoration: 'none', transition: 'color 0.2s' }} onMouseOver={e => e.target.style.color='#fff'} onMouseOut={e => e.target.style.color='#888'}>Watch Ultra</a></li>
           </ul>
         </div>
 
         <div style={{ flex: '1 1 150px' }}>
           <h4 style={{ color: '#fff', marginBottom: '1.5rem', fontWeight: '600' }}>Company</h4>
           <ul style={{ listStyle: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: '0.8rem', fontSize: '0.9rem' }}>
-            <li><a href="#" style={{ color: '#888', textDecoration: 'none', transition: 'color 0.2s' }} onMouseOver={e => e.target.style.color='#fff'} onMouseOut={e => e.target.style.color='#888'}>About Us</a></li>
-            <li><a href="#" style={{ color: '#888', textDecoration: 'none', transition: 'color 0.2s' }} onMouseOver={e => e.target.style.color='#fff'} onMouseOut={e => e.target.style.color='#888'}>Careers</a></li>
-            <li><a href="#" style={{ color: '#888', textDecoration: 'none', transition: 'color 0.2s' }} onMouseOver={e => e.target.style.color='#fff'} onMouseOut={e => e.target.style.color='#888'}>Privacy Policy</a></li>
-            <li><a href="#" style={{ color: '#888', textDecoration: 'none', transition: 'color 0.2s' }} onMouseOver={e => e.target.style.color='#fff'} onMouseOut={e => e.target.style.color='#888'}>Terms of Service</a></li>
+            <li><a href="#about" style={{ color: '#888', textDecoration: 'none', transition: 'color 0.2s' }} onMouseOver={e => e.target.style.color='#fff'} onMouseOut={e => e.target.style.color='#888'}>About Us</a></li>
+            <li><a href="#home" style={{ color: '#888', textDecoration: 'none', transition: 'color 0.2s' }} onMouseOver={e => e.target.style.color='#fff'} onMouseOut={e => e.target.style.color='#888'}>Careers</a></li>
+            <li><a href="#home" style={{ color: '#888', textDecoration: 'none', transition: 'color 0.2s' }} onMouseOver={e => e.target.style.color='#fff'} onMouseOut={e => e.target.style.color='#888'}>Privacy Policy</a></li>
+            <li><a href="#home" style={{ color: '#888', textDecoration: 'none', transition: 'color 0.2s' }} onMouseOver={e => e.target.style.color='#fff'} onMouseOut={e => e.target.style.color='#888'}>Terms of Service</a></li>
           </ul>
         </div>
 
