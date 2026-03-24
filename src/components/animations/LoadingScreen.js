@@ -126,7 +126,7 @@ const LoadingScreen = ({ onComplete }) => {
             textTransform: 'uppercase'
           }}
         >
-          Loading Perfection {progress}%
+          Quality Loading {progress}%
         </motion.div>
       </div>
     </motion.div>

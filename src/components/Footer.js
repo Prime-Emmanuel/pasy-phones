@@ -6,11 +6,20 @@ const Footer = () => {
       <div className="container" style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', gap: '3rem', marginBottom: '4rem' }}>
         
         <div style={{ flex: '1 1 250px' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '1.5rem', color: '#fff' }}>
-            <svg style={{ width: '1.5rem', height: '1.5rem' }} viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M24 4H6V17.3333V30.6667H24V44H42V30.6667V17.3333H24V4Z" fill="currentColor" fillRule="evenodd" clipRule="evenodd"/>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.5rem', cursor: 'pointer' }} onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+            <svg width="32" height="32" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="40" height="40" rx="10" fill="url(#footer-logo-grad)" />
+              <path d="M12 28V12H20C22.2091 12 24 13.7909 24 16C24 18.2091 22.2091 20 20 20H12" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+              <circle cx="28" cy="24" r="4" stroke="white" strokeWidth="2.5" />
+              <path d="M28 20V12" stroke="white" strokeWidth="2.5" strokeLinecap="round" />
+              <defs>
+                <linearGradient id="footer-logo-grad" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+                  <stop stopColor="#00d2ff" />
+                  <stop offset="1" stopColor="#3a7bd5" />
+                </linearGradient>
+              </defs>
             </svg>
-            <span style={{ fontSize: '1.25rem', fontWeight: '700', letterSpacing: '-0.02em' }}>PASY</span>
+            <span style={{ fontSize: '1.25rem', fontWeight: '800', letterSpacing: '-0.02em', color: '#fff' }}>PASY</span>
           </div>
           <p style={{ lineHeight: '1.6', fontSize: '0.9rem' }}>
             The premier destination for luxury authentic tech devices, providing unmatched warranty and worldwide white-glove service.

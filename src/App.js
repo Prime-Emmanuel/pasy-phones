@@ -5,7 +5,8 @@ import Navbar from './components/Navbar';
 import HeroSection from './components/sections/HeroSection';
 import StoreSection from './components/sections/StoreSection';
 import ProductDetailModal from './components/ProductDetailModal';
-import ReservationForm from './components/ReservationForm';
+import CheckoutPage from './components/ui/CheckoutPage';
+import PaymentModal from './components/ui/PaymentModal';
 import ChatWidget from './components/ChatWidget';
 import FakeNotification from './components/FakeNotification';
 import TrustSection from './components/sections/TrustSection';
@@ -17,23 +18,34 @@ import './styles/globals.css';
 function App() {
   const [loading, setLoading] = useState(true);
   const [selectedProduct, setSelectedProduct] = useState(null);
-  const [showReservation, setShowReservation] = useState(false);
+  const [cart, setCart] = useState([]);
+  const [showCheckout, setShowCheckout] = useState(false);
+  const [activePayment, setActivePayment] = useState(null);
   const [showNotification, setShowNotification] = useState(false);
+  const [activeCategory, setActiveCategory] = useState('phones');
 
   useEffect(() => {
-    // Simulate loading time
-    setTimeout(() => {
-      setLoading(false);
-    }, 3000);
-
-    // Fake notification every 20 seconds
+    setTimeout(() => setLoading(false), 3000);
     const interval = setInterval(() => {
       setShowNotification(true);
       setTimeout(() => setShowNotification(false), 4000);
     }, 20000);
-
     return () => clearInterval(interval);
   }, []);
+
+  const handleAddToCart = (product) => {
+    setCart([...cart, product]);
+    setSelectedProduct(null);
+  };
+
+  const handleCheckout = (formData) => {
+    const total = cart.reduce((sum, item) => sum + item.price, 0);
+    setActivePayment({
+      amount: total,
+      method: formData.paymentMethod,
+      details: formData
+    });
+  };
 
   return (
     <>
@@ -47,47 +59,73 @@ function App() {
             animate={{ opacity: 1 }}
             transition={{ duration: 1 }}
           >
-            <Navbar />
+            <Navbar 
+              cartCount={cart.length} 
+              cartItems={cart}
+              onRemoveFromCart={(id) => setCart(cart.filter(i => i.id !== id))}
+              onCheckout={() => setShowCheckout(true)}
+            />
+            
             <div id="home">
               <HeroSection />
             </div>
+            
             <div id="trust">
               <TrustSection />
             </div>
+            
             <div id="products">
-              <StoreSection onProductClick={setSelectedProduct} />
+              <StoreSection 
+                onProductClick={(product) => {
+                  setCart([...cart, { ...product, id: Date.now() }]);
+                  // You might still want to open a modal, but here we add directly
+                  // as per the "Add to bag" terminology usually implying direct action
+                }} 
+              />
             </div>
+            
             <div id="about">
               <AboutSection />
             </div>
+            
             <div id="reviews">
               <TestimonialsSection />
             </div>
+            
             <Footer />
 
-            {selectedProduct && (
-              <ProductDetailModal
-                product={selectedProduct}
-                onClose={() => setSelectedProduct(null)}
-                onReserve={() => {
-                  setShowReservation(true);
-                  setSelectedProduct(null);
-                }}
-              />
-            )}
+            <AnimatePresence>
+              {selectedProduct && (
+                <ProductDetailModal
+                  product={selectedProduct}
+                  onClose={() => setSelectedProduct(null)}
+                  onReserve={() => handleAddToCart(selectedProduct)}
+                />
+              )}
 
-            {showReservation && (
-              <ReservationForm
-                onSubmit={(data) => {
-                  console.log('Reservation:', data);
-                  // The success state is now handled within the ReservationForm component itself
-                }}
-                onClose={() => setShowReservation(false)}
-              />
-            )}
+              {showCheckout && (
+                <CheckoutPage 
+                  cartItems={cart}
+                  onClose={() => setShowCheckout(false)}
+                  onCheckout={handleCheckout}
+                />
+              )}
+
+              {activePayment && (
+                <PaymentModal 
+                  orderDetails={activePayment}
+                  onConfirm={() => {
+                    setActivePayment(null);
+                    setShowCheckout(false);
+                    setCart([]);
+                    // Success notification handled in Modal, but could add more global state here
+                  }}
+                  onCancel={() => setActivePayment(null)}
+                />
+              )}
+            </AnimatePresence>
 
             <ChatWidget />
-            
             {showNotification && <FakeNotification />}
           </motion.div>
         )}
@@ -96,4 +134,4 @@ function App() {
   );
 }
 
-export default App;
+export default App;

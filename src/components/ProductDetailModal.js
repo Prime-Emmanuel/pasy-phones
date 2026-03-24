@@ -116,7 +116,7 @@ const ProductDetailModal = ({ product, onClose, onReserve }) => {
               {/* Action Buttons */}
               <div className="modal-actions">
                 <button className="modal-reserve-btn" onClick={onReserve}>
-                  Reserve Now
+                  Add to Cart
                 </button>
                 <button className="modal-icon-btn">
                   <span className="material-symbols-outlined">favorite</span>

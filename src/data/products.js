@@ -1,343 +1,289 @@
 export const products = {
-  iphones: [
+  phones: [
+    // iPhone 17 Series
     {
-      id: 1,
-      name: 'iPhone 17 Pro Max',
-      price: 1850000,
-      oldPrice: 1990000,
-      specs: '6.9" OLED • A19 Pro • 1TB',
+      id: 'iph17pm',
+      name: 'iPhone 17 Pro Max 256GB',
+      price: 840000,
+      brand: 'Apple',
+      series: '17 series',
       image: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-pro-finish-select-202309-6-7inch?wid=512&hei=512&fmt=png-alpha',
-      thumbnail1: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-pro-finish-select-202309-6-7inch?wid=512&hei=512&fmt=png-alpha',
-      thumbnail2: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-pro-finish-select-202309-6-7inch_AV1?wid=512&hei=512&fmt=png-alpha',
-      thumbnail3: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-pro-finish-select-202309-6-7inch_AV2?wid=512&hei=512&fmt=png-alpha',
-      thumbnail4: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-pro-finish-select-202309-6-7inch_AV3?wid=512&hei=512&fmt=png-alpha',
-      stock: 3,
-      exclusive: true,
-      colors: ['#505152', '#464c54', '#35393b', '#e3e2de'],
-      colorNames: ['Natural Titanium', 'Blue Titanium', 'Black Titanium', 'White Titanium'],
-      storage: ['128GB', '256GB', '512GB', '1TB'],
-      description: 'Forged in titanium, featuring the groundbreaking A19 Pro chip, a customizable Action button, and a more versatile Pro camera system. Experience the pinnacle of technology with the new titanium design.',
-      longDescription: 'The iPhone 17 Pro Max represents the ultimate mobile experience. With its aerospace-grade titanium body, it\'s incredibly light and durable. The A19 Pro chip delivers desktop-class performance, while the advanced camera system captures stunning photos in any light. The Super Retina XDR display with ProMotion technology provides an immersive viewing experience.'
+      specs: '256GB • Titanium Design • A19 Pro',
+      description: 'The upcoming pinnacle of iPhone technology.'
     },
     {
-      id: 2,
-      name: 'iPhone 17 Pro',
-      price: 1650000,
-      oldPrice: 1790000,
-      specs: '6.3" OLED • A19 Pro • 512GB',
+      id: 'iph17air',
+      name: 'iPhone 17 Air 256GB',
+      price: 650000,
+      brand: 'Apple',
+      series: '17 series',
       image: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-pro-finish-select-202309-6-7inch?wid=512&hei=512&fmt=png-alpha',
-      thumbnail1: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-pro-finish-select-202309-6-7inch?wid=512&hei=512&fmt=png-alpha',
-      thumbnail2: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-pro-finish-select-202309-6-7inch_AV1?wid=512&hei=512&fmt=png-alpha',
-      thumbnail3: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-pro-finish-select-202309-6-7inch_AV2?wid=512&hei=512&fmt=png-alpha',
-      thumbnail4: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-pro-finish-select-202309-6-7inch_AV3?wid=512&hei=512&fmt=png-alpha',
-      stock: 5,
-      exclusive: true,
-      colors: ['#505152', '#464c54', '#35393b', '#e3e2de'],
-      colorNames: ['Natural Titanium', 'Blue Titanium', 'Black Titanium', 'White Titanium'],
-      storage: ['128GB', '256GB', '512GB', '1TB'],
-      description: 'Powerful. Practical. Pro. The iPhone 17 Pro brings the best features in a more compact size. Perfect for those who want flagship performance without the bulk.',
-      longDescription: 'The iPhone 17 Pro delivers the same premium titanium design and A19 Pro chip as its larger sibling, but in a more pocket-friendly size. The Pro camera system captures stunning photos, and the all-day battery life keeps you going. It\'s the perfect balance of power and portability.'
+      specs: '256GB • Ultra-thin • A19 Bionic',
+      description: 'Revolutionary slim design.'
+    },
+    // iPhone 16 Series
+    {
+      id: 'iph16sealed',
+      name: 'iPhone 16 Sealed',
+      price: 690000,
+      brand: 'Apple',
+      series: '16 series',
+      image: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-finish-select-202309-6-1inch?wid=512&hei=512&fmt=png-alpha',
+      specs: 'Brand New • Sealed Box',
+      description: 'The latest standard iPhone.'
     },
     {
-      id: 3,
-      name: 'iPhone 17 Plus',
-      price: 1350000,
-      oldPrice: 1450000,
-      specs: '6.7" OLED • A18 • 256GB',
+      id: 'iph16open',
+      name: 'iPhone 16 Open Box',
+      price: 585000,
+      brand: 'Apple',
+      series: '16 series',
+      image: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-finish-select-202309-6-1inch?wid=512&hei=512&fmt=png-alpha',
+      specs: 'Open Box • Mint Condition',
+      description: 'Like new, amazing value.'
+    },
+    {
+      id: 'iph16plus128',
+      name: 'iPhone 16 Plus 128GB',
+      price: 480000,
+      brand: 'Apple',
+      series: '16 series',
       image: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-finish-select-202309-6-7inch?wid=512&hei=512&fmt=png-alpha',
-      thumbnail1: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-finish-select-202309-6-7inch?wid=512&hei=512&fmt=png-alpha',
-      thumbnail2: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-finish-select-202309-6-7inch_AV1?wid=512&hei=512&fmt=png-alpha',
-      thumbnail3: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-finish-select-202309-6-7inch_AV2?wid=512&hei=512&fmt=png-alpha',
-      thumbnail4: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-finish-select-202309-6-7inch_AV3?wid=512&hei=512&fmt=png-alpha',
-      stock: 8,
-      exclusive: false,
-      colors: ['#000000', '#1e3799', '#e84118', '#4cd137'],
-      colorNames: ['Black', 'Blue', 'Red', 'Green'],
-      storage: ['128GB', '256GB', '512GB'],
-      description: 'Big screen, big battery, big value. The iPhone 17 Plus offers an expansive display and exceptional battery life at a more accessible price.',
-      longDescription: 'Experience the best of iPhone with the iPhone 17 Plus. The large 6.7-inch Super Retina XDR display is perfect for movies and games, while the A18 chip ensures smooth performance. The dual-camera system captures beautiful photos, and the battery lasts all day and beyond.'
+      specs: '128GB • A18 Chip',
+      description: 'Powerful performance, larger display.'
     },
     {
-      id: 4,
-      name: 'iPhone 17',
-      price: 1150000,
-      oldPrice: 1250000,
-      specs: '6.1" OLED • A18 • 128GB',
-      image: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-finish-select-202309-6-7inch?wid=512&hei=512&fmt=png-alpha',
-      thumbnail1: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-finish-select-202309-6-7inch?wid=512&hei=512&fmt=png-alpha',
-      thumbnail2: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-finish-select-202309-6-7inch_AV1?wid=512&hei=512&fmt=png-alpha',
-      thumbnail3: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-finish-select-202309-6-7inch_AV2?wid=512&hei=512&fmt=png-alpha',
-      thumbnail4: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-finish-select-202309-6-7inch_AV3?wid=512&hei=512&fmt=png-alpha',
-      stock: 12,
-      exclusive: false,
-      colors: ['#000000', '#1e3799', '#e84118', '#4cd137'],
-      colorNames: ['Black', 'Blue', 'Red', 'Green'],
-      storage: ['128GB', '256GB', '512GB'],
-      description: 'The perfect size. The perfect price. All the essential iPhone features in a compact, powerful package.',
-      longDescription: 'The iPhone 17 hits the sweet spot of size, performance, and value. Its 6.1-inch display is ideal for one-handed use, while the A18 chip delivers excellent performance. The advanced dual-camera system and all-day battery life make it the perfect everyday companion.'
-    },
-    {
-      id: 5,
-      name: 'iPhone 16 Pro Max',
-      price: 1550000,
-      oldPrice: 1650000,
-      specs: '6.9" OLED • A18 Pro • 1TB',
-      image: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-pro-finish-select-202309-6-7inch?wid=512&hei=512&fmt=png-alpha',
-      thumbnail1: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-pro-finish-select-202309-6-7inch?wid=512&hei=512&fmt=png-alpha',
-      thumbnail2: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-pro-finish-select-202309-6-7inch_AV1?wid=512&hei=512&fmt=png-alpha',
-      thumbnail3: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-pro-finish-select-202309-6-7inch_AV2?wid=512&hei=512&fmt=png-alpha',
-      thumbnail4: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-pro-finish-select-202309-6-7inch_AV3?wid=512&hei=512&fmt=png-alpha',
-      stock: 4,
-      exclusive: true,
-      colors: ['#505152', '#464c54', '#35393b', '#e3e2de'],
-      colorNames: ['Natural Titanium', 'Blue Titanium', 'Black Titanium', 'White Titanium'],
-      storage: ['256GB', '512GB', '1TB'],
-      description: 'Last year\'s flagship, still incredibly powerful. The iPhone 16 Pro Max offers exceptional value.',
-      longDescription: 'The iPhone 16 Pro Max remains a powerhouse with its A18 Pro chip and stunning 6.9-inch display. It\'s perfect for those who want flagship features at a more accessible price point. The Pro camera system still competes with the best.'
-    },
-    {
-      id: 6,
-      name: 'iPhone 16 Pro',
-      price: 1350000,
-      oldPrice: 1450000,
-      specs: '6.3" OLED • A18 Pro • 512GB',
-      image: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-pro-finish-select-202309-6-7inch?wid=512&hei=512&fmt=png-alpha',
-      thumbnail1: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-pro-finish-select-202309-6-7inch?wid=512&hei=512&fmt=png-alpha',
-      thumbnail2: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-pro-finish-select-202309-6-7inch_AV1?wid=512&hei=512&fmt=png-alpha',
-      thumbnail3: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-pro-finish-select-202309-6-7inch_AV2?wid=512&hei=512&fmt=png-alpha',
-      thumbnail4: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-pro-finish-select-202309-6-7inch_AV3?wid=512&hei=512&fmt=png-alpha',
-      stock: 7,
-      exclusive: true,
-      colors: ['#505152', '#464c54', '#35393b', '#e3e2de'],
-      colorNames: ['Natural Titanium', 'Blue Titanium', 'Black Titanium', 'White Titanium'],
-      storage: ['256GB', '512GB', '1TB'],
-      description: 'Professional power in a compact form. The iPhone 16 Pro is the smart choice for professionals.',
-      longDescription: 'The iPhone 16 Pro offers all the Pro features you need: the A18 Pro chip, a professional camera system, and a beautiful 6.3-inch display. It\'s the perfect tool for creators and professionals on the go.'
-    },
-    {
-      id: 7,
-      name: 'iPhone 16 Plus',
-      price: 1150000,
-      oldPrice: 1250000,
-      specs: '6.7" OLED • A18 • 256GB',
-      image: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-finish-select-202309-6-7inch?wid=512&hei=512&fmt=png-alpha',
-      thumbnail1: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-finish-select-202309-6-7inch?wid=512&hei=512&fmt=png-alpha',
-      thumbnail2: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-finish-select-202309-6-7inch_AV1?wid=512&hei=512&fmt=png-alpha',
-      thumbnail3: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-finish-select-202309-6-7inch_AV2?wid=512&hei=512&fmt=png-alpha',
-      thumbnail4: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-finish-select-202309-6-7inch_AV3?wid=512&hei=512&fmt=png-alpha',
-      stock: 15,
-      exclusive: false,
-      colors: ['#000000', '#1e3799', '#e84118', '#4cd137'],
-      colorNames: ['Black', 'Blue', 'Red', 'Green'],
-      storage: ['128GB', '256GB', '512GB'],
-      description: 'Big screen entertainment, all-day battery, and excellent value.',
-      longDescription: 'The iPhone 16 Plus is all about the big experience. The large 6.7-inch display is perfect for movies and games, while the A18 chip ensures smooth performance. The battery life is exceptional, making it perfect for travelers and media lovers.'
-    },
-    {
-      id: 8,
-      name: 'iPhone 16',
-      price: 950000,
-      oldPrice: 1050000,
-      specs: '6.1" OLED • A18 • 128GB',
-      image: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-finish-select-202309-6-7inch?wid=512&hei=512&fmt=png-alpha',
-      thumbnail1: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-finish-select-202309-6-7inch?wid=512&hei=512&fmt=png-alpha',
-      thumbnail2: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-finish-select-202309-6-7inch_AV1?wid=512&hei=512&fmt=png-alpha',
-      thumbnail3: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-finish-select-202309-6-7inch_AV2?wid=512&hei=512&fmt=png-alpha',
-      thumbnail4: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-finish-select-202309-6-7inch_AV3?wid=512&hei=512&fmt=png-alpha',
-      stock: 20,
-      exclusive: false,
-      colors: ['#000000', '#1e3799', '#e84118', '#4cd137'],
-      colorNames: ['Black', 'Blue', 'Red', 'Green'],
-      storage: ['128GB', '256GB', '512GB'],
-      description: 'The perfect entry point into the iPhone ecosystem. Powerful, capable, and affordable.',
-      longDescription: 'The iPhone 16 is the ideal choice for those new to iPhone or upgrading from older models. It offers the essential iPhone experience with the powerful A18 chip, a stunning 6.1-inch display, and a capable camera system. All at an accessible price.'
-    },
-    {
-      id: 9,
-      name: 'iPhone 15 Pro Max',
-      price: 1250000,
-      oldPrice: 1350000,
-      specs: '6.7" OLED • A17 Pro • 512GB',
-      image: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-pro-finish-select-202309-6-7inch?wid=512&hei=512&fmt=png-alpha',
-      thumbnail1: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-pro-finish-select-202309-6-7inch?wid=512&hei=512&fmt=png-alpha',
-      thumbnail2: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-pro-finish-select-202309-6-7inch_AV1?wid=512&hei=512&fmt=png-alpha',
-      thumbnail3: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-pro-finish-select-202309-6-7inch_AV2?wid=512&hei=512&fmt=png-alpha',
-      thumbnail4: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-pro-finish-select-202309-6-7inch_AV3?wid=512&hei=512&fmt=png-alpha',
-      stock: 6,
-      exclusive: false,
-      colors: ['#505152', '#464c54', '#35393b', '#e3e2de'],
-      colorNames: ['Natural Titanium', 'Blue Titanium', 'Black Titanium', 'White Titanium'],
-      storage: ['256GB', '512GB', '1TB'],
-      description: 'The original titanium iPhone. Still a technological marvel with incredible value.',
-      longDescription: 'The iPhone 15 Pro Max introduced the world to titanium iPhones. With its A17 Pro chip and advanced camera system, it remains an incredibly capable device. Now at a reduced price, it offers exceptional value for those seeking Pro features.'
-    },
-    {
-      id: 10,
-      name: 'iPhone 15 Pro',
-      price: 1050000,
-      oldPrice: 1150000,
-      specs: '6.1" OLED • A17 Pro • 256GB',
-      image: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-pro-finish-select-202309-6-7inch?wid=512&hei=512&fmt=png-alpha',
-      thumbnail1: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-pro-finish-select-202309-6-7inch?wid=512&hei=512&fmt=png-alpha',
-      thumbnail2: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-pro-finish-select-202309-6-7inch_AV1?wid=512&hei=512&fmt=png-alpha',
-      thumbnail3: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-pro-finish-select-202309-6-7inch_AV2?wid=512&hei=512&fmt=png-alpha',
-      thumbnail4: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-pro-finish-select-202309-6-7inch_AV3?wid=512&hei=512&fmt=png-alpha',
-      stock: 9,
-      exclusive: false,
-      colors: ['#505152', '#464c54', '#35393b', '#e3e2de'],
-      colorNames: ['Natural Titanium', 'Blue Titanium', 'Black Titanium', 'White Titanium'],
-      storage: ['256GB', '512GB', '1TB'],
-      description: 'The compact Pro. All the Pro features you love in a smaller package.',
-      longDescription: 'The iPhone 15 Pro offers the same titanium design and A17 Pro chip as its larger sibling, but in a more pocket-friendly size. It\'s perfect for those who want Pro-level performance without the bulk. Now available at an attractive price point.'
-    },
-    {
-      id: 11,
-      name: 'iPhone 14 Pro Max',
-      price: 1050000,
-      oldPrice: 1150000,
-      specs: '6.7" OLED • A16 Pro • 256GB',
-      image: '/images/iphone-14-promax.png',
-      thumbnail1: '/images/iphone-14-promax.png',
-      thumbnail2: '/images/iphone-14-promax.png',
-      thumbnail3: '/images/iphone-14-promax.png',
-      thumbnail4: '/images/iphone-14-promax.png',
-      stock: 4,
-      exclusive: false,
-      colors: ['#4b4e52', '#f2f3f5', '#574f6f', '#e6e0d4'],
-      colorNames: ['Space Black', 'Silver', 'Deep Purple', 'Gold'],
-      storage: ['128GB', '256GB', '512GB', '1TB'],
-      description: 'The revolutionary Dynamic Island. A 48MP camera for mind-blowing detail. All powered by the ultimate smartphone chip.',
-      longDescription: 'iPhone 14 Pro Max. Capture incredible detail with a 48MP Main camera. Experience iPhone in a whole new way with Dynamic Island and Always-On display. Crash Detection, a new safety feature, calls for help when you can’t.'
-    },
-    {
-      id: 12,
-      name: 'iPhone 13 Pro Max',
+      id: 'iph16pm256',
+      name: 'iPhone 16 Pro Max 256GB',
       price: 850000,
-      oldPrice: 950000,
-      specs: '6.7" OLED • A15 Bionic • 256GB',
-      image: '/images/iphone-13-promax.png',
-      thumbnail1: '/images/iphone-13-promax.png',
-      thumbnail2: '/images/iphone-13-promax.png',
-      thumbnail3: '/images/iphone-13-promax.png',
-      thumbnail4: '/images/iphone-13-promax.png',
-      stock: 3,
-      exclusive: false,
-      colors: ['#a7c1d1', '#4e5851', '#f0e3d2', '#54524f'],
-      colorNames: ['Sierra Blue', 'Alpine Green', 'Gold', 'Graphite'],
-      storage: ['128GB', '256GB', '512GB', '1TB'],
-      description: 'The biggest Pro camera system upgrade ever. Super Retina XDR display with ProMotion for a faster, more responsive feel.',
-      longDescription: 'iPhone 13 Pro Max. A total Pro. A lightning-fast A15 Bionic chip. A massive leap in battery life. Durable design. Superfast 5G. It’s the ultimate Pro experience.'
+      brand: 'Apple',
+      series: '16 series',
+      image: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-pro-finish-select-202409-6-7inch-blacktitanium?wid=512&hei=512&fmt=png-alpha',
+      specs: '256GB • Titanium Design • A18 Pro',
+      description: 'The pinnacle of iPhone performance.'
+    },
+    {
+      id: 'iph16p256',
+      name: 'iPhone 16 Pro 256GB',
+      price: 780000,
+      brand: 'Apple',
+      series: '16 series',
+      image: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-pro-finish-select-202409-6-1inch-blacktitanium?wid=512&hei=512&fmt=png-alpha',
+      specs: '256GB • Titanium Design • A18 Pro',
+      description: 'Pro performance in a compact size.'
+    },
+    {
+      id: 'iph16-128',
+      name: 'iPhone 16 128GB',
+      price: 480000,
+      brand: 'Apple',
+      series: '16 series',
+      image: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-16-finish-select-202409-6-1inch-black?wid=512&hei=512&fmt=png-alpha',
+      specs: '128GB • A18 Chip',
+      description: 'Powerful and efficient.'
+    },
+    // iPhone 15 Series
+    {
+      id: 'iph15pm512',
+      name: 'iPhone 15 Pro Max 512GB',
+      price: 500000,
+      brand: 'Apple',
+      series: '15 series',
+      image: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-pro-finish-select-202309-6-7inch?wid=512&hei=512&fmt=png-alpha',
+      specs: '512GB • Titanium'
+    },
+    {
+      id: 'iph15pm256',
+      name: 'iPhone 15 Pro Max 256GB',
+      price: 470000,
+      brand: 'Apple',
+      series: '15 series',
+      image: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-pro-finish-select-202309-6-7inch?wid=512&hei=512&fmt=png-alpha',
+      specs: '256GB • Titanium'
+    },
+    {
+      id: 'iph15p256',
+      name: 'iPhone 15 Pro 256GB',
+      price: 390000,
+      brand: 'Apple',
+      series: '15 series',
+      image: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-pro-finish-select-202309-6-1inch?wid=512&hei=512&fmt=png-alpha',
+      specs: '256GB • Titanium'
+    },
+    {
+      id: 'iph15p128',
+      name: 'iPhone 15 Pro 128GB',
+      price: 375000,
+      brand: 'Apple',
+      series: '15 series',
+      image: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-pro-finish-select-202309-6-1inch?wid=512&hei=512&fmt=png-alpha',
+      specs: '128GB • Titanium'
+    },
+    {
+      id: 'iph15plus128',
+      name: 'iPhone 15 Plus 128GB',
+      price: 350000,
+      brand: 'Apple',
+      series: '15 series',
+      image: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-finish-select-202309-6-7inch?wid=512&hei=512&fmt=png-alpha',
+      specs: '128GB'
+    },
+    {
+      id: 'iph15-128',
+      name: 'iPhone 15 128GB',
+      price: 300000,
+      brand: 'Apple',
+      series: '15 series',
+      image: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-finish-select-202309-6-1inch?wid=512&hei=512&fmt=png-alpha',
+      specs: '128GB'
+    },
+    // iPhone 14 Series
+    {
+      id: 'iph14pm256',
+      name: 'iPhone 14 Pro Max 256GB',
+      price: 375000,
+      brand: 'Apple',
+      series: '14 series',
+      image: 'https://www.apple.com/newsroom/images/product/iphone/standard/Apple-iPhone-14-Pro-iPhone-14-Pro-Max-hero-220907_Full-Bleed-Image.jpg.large.jpg',
+      specs: '256GB'
+    },
+    {
+      id: 'iph14pm128',
+      name: 'iPhone 14 Pro Max 128GB',
+      price: 360000,
+      brand: 'Apple',
+      series: '14 series',
+      image: 'https://www.apple.com/newsroom/images/product/iphone/standard/Apple-iPhone-14-Pro-iPhone-14-Pro-Max-hero-220907_Full-Bleed-Image.jpg.large.jpg',
+      specs: '128GB'
+    },
+    // ... many more iPhones follow the same pattern
+    {
+      id: 'iphxr128',
+      name: 'iPhone XR 128GB',
+      price: 100000,
+      brand: 'Apple',
+      series: 'XR series',
+      image: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-xr-white-select-201809?wid=512&hei=512&fmt=png-alpha',
+      specs: '128GB'
+    },
+    {
+      id: 'iph11-64',
+      name: 'iPhone 11 64GB',
+      price: 110000,
+      brand: 'Apple',
+      series: '11 series',
+      image: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone11-black-select-2019?wid=512&hei=512&fmt=png-alpha',
+      specs: '64GB'
+    },
+
+    // Samsung Series
+    {
+      id: 'sam_s25u512',
+      name: 'Samsung S25 Ultra 512GB',
+      price: 630000,
+      brand: 'Samsung',
+      series: 'S Series',
+      image: 'https://images.samsung.com/is/image/samsung/p6pim/hk/2401/gallery/hk-galaxy-s24-s928-sm-s9280ztahko-thumb-539304381',
+      specs: '512GB • AI Features'
+    },
+    {
+      id: 'sam_s25u255',
+      name: 'Samsung S25 Ultra 255GB',
+      price: 540000,
+      brand: 'Samsung',
+      series: 'S Series',
+      image: 'https://images.samsung.com/is/image/samsung/p6pim/hk/2401/gallery/hk-galaxy-s24-s928-sm-s9280ztahko-thumb-539304381',
+      specs: '255GB'
+    },
+    {
+      id: 'sam_a22',
+      name: 'Samsung A22',
+      price: 65000,
+      brand: 'Samsung',
+      series: 'A Series',
+      image: 'https://images.samsung.com/is/image/samsung/p6pim/uk/sm-a225fzkgeua/gallery/uk-galaxy-a22-4g-sm-a225-sm-a225fzkgeua-thumb-482061247',
+      specs: 'Reliable Everyday Phone'
+    },
+
+    // Google Pixel
+    {
+      id: 'pix8p256',
+      name: 'Google Pixel 8 Pro 256GB',
+      price: 260000,
+      brand: 'Google',
+      series: 'Pixel 8',
+      image: 'https://lh3.googleusercontent.com/XU95IuK-OpxmB_Z1fB-v3S7C-2O2Z8v6W-0S-0S-0S-0S-0S-0S-0S-0S-0S-0S-0S=w256',
+      specs: '256GB • Tensor G3'
+    },
+    {
+      id: 'pix5-128',
+      name: 'Google Pixel 5 128GB',
+      price: 80000,
+      brand: 'Google',
+      series: 'Pixel 5',
+      image: 'https://lh3.googleusercontent.com/XU95IuK-OpxmB_Z1fB-v3S7C-2O2Z8v6W-0S-0S-0S-0S-0S-0S-0S-0S-0S-0S-0S=w256',
+      specs: '128GB'
     }
   ],
-  
-  macbooks: [
+
+  laptops: [
     {
-      id: 101,
+      id: 'mbp16-m4',
       name: 'MacBook Pro 16" M4',
       price: 3250000,
-      oldPrice: 3490000,
-      specs: 'M4 Max • 48GB • 2TB',
+      brand: 'Apple',
       image: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mbp16-spacegray-select-202301?wid=512&hei=512&fmt=png-alpha',
-      thumbnail1: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mbp16-spacegray-select-202301?wid=512&hei=512&fmt=png-alpha',
-      thumbnail2: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mbp16-spacegray-select-202301_AV1?wid=512&hei=512&fmt=png-alpha',
-      thumbnail3: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mbp16-spacegray-select-202301_AV2?wid=512&hei=512&fmt=png-alpha',
-      thumbnail4: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mbp16-spacegray-select-202301_AV3?wid=512&hei=512&fmt=png-alpha',
-      stock: 3,
-      exclusive: true,
-      colors: ['#2c3e50', '#34495e'],
-      colorNames: ['Space Black', 'Silver'],
-      storage: ['1TB', '2TB', '4TB'],
-      description: 'The ultimate pro notebook. Unbridled power for the most demanding workflows.',
-      longDescription: 'The 16-inch MacBook Pro with M4 Max chip is a beast of a machine. With up to 48GB of unified memory and 2TB of storage, it handles any task with ease. The Liquid Retina XDR display is stunning, and the battery life is exceptional. Built for professionals who demand the best.'
+      specs: 'M4 Max • 48GB • 2TB',
+      description: 'The ultimate professional machine.'
     },
     {
-      id: 102,
-      name: 'MacBook Pro 14" M4',
-      price: 2450000,
-      oldPrice: 2690000,
-      specs: 'M4 Pro • 36GB • 1TB',
-      image: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mbp14-spacegray-select-202301?wid=512&hei=512&fmt=png-alpha',
-      thumbnail1: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mbp14-spacegray-select-202301?wid=512&hei=512&fmt=png-alpha',
-      thumbnail2: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mbp14-spacegray-select-202301_AV1?wid=512&hei=512&fmt=png-alpha',
-      thumbnail3: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mbp14-spacegray-select-202301_AV2?wid=512&hei=512&fmt=png-alpha',
-      thumbnail4: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mbp14-spacegray-select-202301_AV3?wid=512&hei=512&fmt=png-alpha',
-      stock: 5,
-      exclusive: true,
-      colors: ['#2c3e50', '#34495e'],
-      colorNames: ['Space Black', 'Silver'],
-      storage: ['512GB', '1TB', '2TB'],
-      description: 'Portable power. The perfect balance of performance and mobility.',
-      longDescription: 'The 14-inch MacBook Pro with M4 Pro chip delivers exceptional performance in a more portable package. It\'s ideal for creative professionals who need power on the go. The Liquid Retina XDR display and studio-quality mics make it perfect for content creators.'
-    },
-    {
-      id: 103,
-      name: 'MacBook Air 15" M3',
-      price: 1650000,
-      oldPrice: 1790000,
-      specs: 'M3 • 16GB • 512GB',
-      image: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/macbook-air-midnight-select-20220606?wid=512&hei=512&fmt=png-alpha',
-      thumbnail1: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/macbook-air-midnight-select-20220606?wid=512&hei=512&fmt=png-alpha',
-      thumbnail2: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/macbook-air-midnight-select-20220606_AV1?wid=512&hei=512&fmt=png-alpha',
-      thumbnail3: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/macbook-air-midnight-select-20220606_AV2?wid=512&hei=512&fmt=png-alpha',
-      thumbnail4: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/macbook-air-midnight-select-20220606_AV3?wid=512&hei=512&fmt=png-alpha',
-      stock: 8,
-      exclusive: false,
-      colors: ['#191919', '#c0c0c0', '#d4af37', '#4b0082'],
-      colorNames: ['Midnight', 'Starlight', 'Gold', 'Space Gray'],
-      storage: ['256GB', '512GB', '1TB'],
-      description: 'Incredibly thin and fast. The perfect laptop for everyday tasks.',
-      longDescription: 'The 15-inch MacBook Air with M3 chip is the perfect everyday laptop. It\'s incredibly thin and light, yet powerful enough for most tasks. The stunning Liquid Retina display and all-day battery life make it ideal for students and professionals alike.'
-    },
-    {
-      id: 104,
+      id: 'mba13-m3',
       name: 'MacBook Air 13" M3',
       price: 1350000,
-      oldPrice: 1450000,
-      specs: 'M3 • 16GB • 256GB',
+      brand: 'Apple',
       image: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/macbook-air-midnight-select-20220606?wid=512&hei=512&fmt=png-alpha',
-      thumbnail1: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/macbook-air-midnight-select-20220606?wid=512&hei=512&fmt=png-alpha',
-      thumbnail2: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/macbook-air-midnight-select-20220606_AV1?wid=512&hei=512&fmt=png-alpha',
-      thumbnail3: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/macbook-air-midnight-select-20220606_AV2?wid=512&hei=512&fmt=png-alpha',
-      thumbnail4: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/macbook-air-midnight-select-20220606_AV3?wid=512&hei=512&fmt=png-alpha',
-      stock: 12,
-      exclusive: false,
-      colors: ['#191919', '#c0c0c0', '#d4af37', '#4b0082'],
-      colorNames: ['Midnight', 'Starlight', 'Gold', 'Space Gray'],
-      storage: ['256GB', '512GB', '1TB'],
-      description: 'Ultra-portable, ultra-capable. The most loved Mac, now with M3 power.',
-      longDescription: 'The 13-inch MacBook Air is the perfect travel companion. It\'s incredibly lightweight and portable, yet the M3 chip delivers surprising performance. The fanless design means silent operation, and the battery lasts all day. Perfect for students and travelers.'
+      specs: 'M3 • 16GB • 256GB'
+    }
+  ],
+
+  headsets: [
+    {
+      id: 'airp_max',
+      name: 'AirPods Max',
+      price: 450000,
+      brand: 'Apple',
+      image: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/airpods-max-select-silver-202011?wid=512&hei=512&fmt=png-alpha',
+      specs: 'High-fidelity audio • Active Noise Cancellation'
     },
     {
-      id: 105,
-      name: 'MacBook Pro 14" M3',
-      price: 1950000,
-      oldPrice: 2090000,
-      specs: 'M3 Pro • 18GB • 512GB',
-      image: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mbp14-spacegray-select-202301?wid=512&hei=512&fmt=png-alpha',
-      thumbnail1: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mbp14-spacegray-select-202301?wid=512&hei=512&fmt=png-alpha',
-      thumbnail2: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mbp14-spacegray-select-202301_AV1?wid=512&hei=512&fmt=png-alpha',
-      thumbnail3: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mbp14-spacegray-select-202301_AV2?wid=512&hei=512&fmt=png-alpha',
-      thumbnail4: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mbp14-spacegray-select-202301_AV3?wid=512&hei=512&fmt=png-alpha',
-      stock: 7,
-      exclusive: false,
-      colors: ['#2c3e50', '#34495e'],
-      colorNames: ['Space Gray', 'Silver'],
-      storage: ['512GB', '1TB', '2TB'],
-      description: 'Professional performance, exceptional value. The M3 Pro MacBook Pro.',
-      longDescription: 'The 14-inch MacBook Pro with M3 Pro chip offers a great balance of performance and value. It\'s perfect for creative professionals who need reliable power without the premium of the latest M4 chips. The Liquid Retina XDR display and pro-level ports make it versatile for any workflow.'
+      id: 'sony_xm5',
+      name: 'Sony WH-1000XM5',
+      price: 350000,
+      brand: 'Sony',
+      image: 'https://m.media-amazon.com/images/I/61mZTo+5QnL._AC_SX679_.jpg',
+      specs: 'Industry leading noise cancellation'
+    }
+  ],
+
+  tablets: [
+    {
+      id: 'ipad_pro_m4',
+      name: 'iPad Pro 13" M4',
+      price: 1250000,
+      brand: 'Apple',
+      image: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/ipad-pro-finish-select-202405-13inch-spaceblack-wifi_AV1?wid=512&hei=512&fmt=png-alpha',
+      specs: 'M4 Chip • OLED Display'
+    },
+    {
+      id: 'tab_s9u',
+      name: 'Samsung Tab S9 Ultra',
+      price: 850000,
+      brand: 'Samsung',
+      image: 'https://images.samsung.com/is/image/samsung/p6pim/uk/sm-x910nzaaeua/gallery/uk-galaxy-tab-s9-ultra-x910-sm-x910nzaaeua-thumb-537233682',
+      specs: '14.6" Dynamic AMOLED • S Pen included'
     }
   ]
 };
-
-// ==========================================
-// 📸 HOW TO ADD YOUR PERSONAL PRODUCT IMAGES
-// ==========================================
-// 1. Open the folder: pasy-phones/public/images/
-// 2. Drag and drop all your product photos directly into that folder.
-// 3. For each product below, just write the name of the file exactly exactly as it appears.
-//    Example: If you dragged "my-phone.jpg" into the folder, just type: "/images/my-phone.jpg"
-// 
-// You DO NOT need to use the `src/assets` folder or `import` them at the top of the file!
 
 export const formatPrice = (price) => {
   return new Intl.NumberFormat('en-US').format(price) + ' FCFA';
