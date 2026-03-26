@@ -89,7 +89,7 @@ const Navbar = ({ cartCount, cartItems, onRemoveFromCart, onCheckout }) => {
               transition={{ type: 'spring', damping: 25, stiffness: 200 }}
             >
               <div className="cart-header">
-                <h2>Your Bag</h2>
+                <h2>Your Order</h2>
                 <button onClick={() => setIsCartOpen(false)} className="close-cart">
                   <span className="material-symbols-outlined">close</span>
                 </button>
@@ -108,14 +108,14 @@ const Navbar = ({ cartCount, cartItems, onRemoveFromCart, onCheckout }) => {
                             <p className="item-price">{item.price.toLocaleString()} FCFA</p>
                           </div>
                           <button onClick={() => onRemoveFromCart(item.id)} className="remove-btn">
-                            <span className="material-symbols-outlined">delete</span>
+                            <span className="material-symbols-outlined">delete_outline</span>
                           </button>
                         </div>
                       ))}
                     </div>
                     <div className="cart-footer">
                       <div className="total-row">
-                        <span>Total</span>
+                        <span>Total Sum</span>
                         <span>{cartItems.reduce((s, i) => s + i.price, 0).toLocaleString()} FCFA</span>
                       </div>
                       <button 
@@ -125,14 +125,14 @@ const Navbar = ({ cartCount, cartItems, onRemoveFromCart, onCheckout }) => {
                           onCheckout();
                         }}
                       >
-                        Proceed to Checkout
+                        Secure Checkout
                       </button>
                     </div>
                   </>
                 ) : (
                   <div className="cart-empty-state">
-                    <span className="material-symbols-outlined icon">shopping_basket</span>
-                    <p>Your bag is empty.</p>
+                    <span className="material-symbols-outlined icon">shopping_cart_checkout</span>
+                    <p>Your bag is waiting to be filled.</p>
                   </div>
                 )}
               </div>
@@ -143,29 +143,29 @@ const Navbar = ({ cartCount, cartItems, onRemoveFromCart, onCheckout }) => {
 
       <style jsx>{`
         .navbar {
-          position: fixed; top: 2rem; left: 50%; transform: translateX(-50%);
-          width: 90%; max-width: 1200px; height: 80px;
-          background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(20px);
-          border-radius: 24px; border: 1px solid rgba(0, 0, 0, 0.05);
+          position: fixed; top: 1.5rem; left: 50%; transform: translateX(-50%);
+          width: 95%; max-width: 1400px; height: 72px;
+          background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(20px);
+          border-radius: 20px; border: 1px solid rgba(0, 0, 0, 0.08);
           z-index: 1000; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        .navbar.scrolled { top: 1rem; height: 70px; background: #fff; box-shadow: 0 20px 40px rgba(0,0,0,0.05); }
+        .navbar.scrolled { top: 0.75rem; height: 64px; background: #fff; box-shadow: 0 20px 40px rgba(0,0,0,0.08); }
 
         .nav-container {
-          height: 100%; padding: 0 2rem; display: flex; align-items: center; justify-content: space-between;
+          height: 100%; padding: 0 1.5rem; display: flex; align-items: center; justify-content: space-between;
         }
 
-        .logo-wrapper { display: flex; align-items: center; gap: 1rem; cursor: pointer; }
-        .logo-text { font-size: 1.5rem; font-weight: 900; color: #000; letter-spacing: 0.1em; }
+        .logo-wrapper { display: flex; align-items: center; gap: 0.75rem; cursor: pointer; }
+        .logo-text { font-size: 1.25rem; font-weight: 900; color: #000; letter-spacing: 0.1em; }
 
-        .nav-links { display: flex; gap: 3rem; align-items: center; }
+        .nav-links { display: flex; gap: 2.5rem; align-items: center; }
         .nav-link {
-          color: #000; font-weight: 800; font-size: 0.95rem; text-decoration: none;
+          color: #000; font-weight: 700; font-size: 0.85rem; text-decoration: none;
           text-transform: uppercase; letter-spacing: 0.05em; transition: 0.3s;
         }
-        .nav-link:hover { opacity: 0.6; }
+        .nav-link:hover { color: #888; }
 
-        .nav-actions { display: flex; align-items: center; gap: 1.5rem; }
+        .nav-actions { display: flex; align-items: center; gap: 1rem; }
         .nav-icon {
           background: none; border: none; color: #000; cursor: pointer;
           display: flex; align-items: center; justify-content: center;
@@ -176,43 +176,46 @@ const Navbar = ({ cartCount, cartItems, onRemoveFromCart, onCheckout }) => {
 
         .nav-icon-wrapper { position: relative; }
         .notification-dot {
-          position: absolute; top: -5px; right: -5px; background: #000; color: #fff;
-          font-size: 0.7rem; width: 18px; height: 18px; border-radius: 50%;
+          position: absolute; top: -4px; right: -4px; background: #000; color: #fff;
+          font-size: 0.65rem; width: 16px; height: 16px; border-radius: 50%;
           display: flex; align-items: center; justify-content: center; font-weight: 800;
         }
 
-        .user-avatar { width: 40px; height: 40px; border-radius: 14px; overflow: hidden; border: 2px solid #000; }
+        .user-avatar { width: 32px; height: 32px; border-radius: 10px; overflow: hidden; border: 1.5px solid #000; }
         .user-avatar img { width: 100%; height: 100%; object-fit: cover; }
 
-        .cart-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.4); backdrop-filter: blur(10px); z-index: 2000; }
+        .cart-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.6); backdrop-filter: blur(10px); z-index: 5000; }
         .cart-sidebar {
-          position: fixed; top: 0; right: 0; width: min(450px, 100%); height: 100%;
-          background: #fff; z-index: 2001; padding: 4rem; display: flex; flex-direction: column;
+          position: fixed; top: 0; right: 0; width: min(400px, 100%); height: 100%;
+          background: #fff; z-index: 5001; padding: 3rem 2rem; display: flex; flex-direction: column;
         }
-        .cart-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 4rem; }
-        .cart-header h2 { font-size: 2.5rem; font-weight: 900; color: #000; }
-        .close-cart { background: #f8f8f8; border: none; width: 50px; height: 50px; border-radius: 50%; cursor: pointer; }
+        .cart-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 3rem; }
+        .cart-header h2 { font-size: 1.5rem; font-weight: 900; color: #000; }
+        .close-cart { background: #f0f0f0; border: none; width: 44px; height: 44px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; }
 
-        .cart-content { flex: 1; display: flex; flex-direction: column; }
-        .cart-items-list { flex: 1; overflow-y: auto; }
-        .cart-item { display: flex; gap: 2rem; margin-bottom: 2.5rem; align-items: center; }
-        .cart-item img { width: 100px; height: 100px; object-fit: contain; background: #f8f8f8; border-radius: 20px; padding: 1rem; }
+        .cart-content { flex: 1; display: flex; flex-direction: column; overflow: hidden; }
+        .cart-items-list { flex: 1; overflow-y: auto; padding-right: 0.5rem; }
+        .cart-item { display: flex; gap: 1rem; margin-bottom: 1.5rem; align-items: center; border-bottom: 1px solid #f9f9f9; padding-bottom: 1rem; }
+        .cart-item img { width: 70px; height: 70px; object-fit: contain; background: #f8f8f8; border-radius: 12px; padding: 0.5rem; }
         .item-info { flex: 1; }
-        .item-info h4 { font-size: 1.1rem; font-weight: 800; margin-bottom: 0.25rem; }
-        .item-spec { font-size: 0.85rem; color: #888; font-weight: 700; margin-bottom: 0.5rem; }
-        .item-price { font-size: 1rem; font-weight: 800; }
+        .item-info h4 { font-size: 1rem; font-weight: 800; margin-bottom: 0.1rem; }
+        .item-spec { font-size: 0.75rem; color: #888; font-weight: 700; margin-bottom: 0.25rem; }
+        .item-price { font-size: 0.95rem; font-weight: 800; }
         .remove-btn { color: #ff4d4d; background: none; border: none; cursor: pointer; }
 
-        .cart-footer { pt: 3rem; border-top: 1px solid #eee; }
-        .total-row { display: flex; justify-content: space-between; margin-bottom: 2rem; font-size: 1.5rem; font-weight: 900; }
+        .cart-footer { padding-top: 1.5rem; border-top: 2px solid #000; }
+        .total-row { display: flex; justify-content: space-between; margin-bottom: 1.5rem; font-size: 1.25rem; font-weight: 900; }
         .checkout-btn {
-          width: 100%; padding: 1.5rem; background: #000; color: #fff; border: none; border-radius: 20px; font-weight: 800; font-size: 1.1rem; cursor: pointer;
+          width: 100%; padding: 1.25rem; background: #000; color: #fff; border: none; border-radius: 16px; font-weight: 800; font-size: 1.1rem; cursor: pointer;
         }
 
         @media (max-width: 768px) {
           .nav-links { display: none; }
-          .navbar { width: 95%; padding: 0 1rem; height: 70px; }
-          .logo-text { display: none; }
+          .navbar { width: 92%; top: 1rem; height: 60px; border-radius: 16px; }
+          .nav-container { padding: 0 1rem; }
+          .logo-text { font-size: 1.1rem; }
+          .cart-sidebar { padding: 2rem 1.25rem; }
+          .cart-header h2 { font-size: 1.25rem; }
         }
       `}</style>
     </>

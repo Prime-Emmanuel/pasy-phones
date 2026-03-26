@@ -323,10 +323,30 @@ const DetailedModelCard = ({ product, onAddToCart }) => {
           cursor: pointer;
           transition: all 0.3s;
         }
+
         .add-cart-btn:hover {
           background: #222;
           transform: translateY(-2px);
           box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        @media (max-width: 768px) {
+          .card-image { height: 280px; padding: 2rem; }
+          .card-info { padding: 1.5rem; }
+          .card-header h3 { font-size: 1.25rem; }
+          .rating { padding: 0.35rem 0.75rem; font-size: 0.8rem; }
+          .card-price { font-size: 1.5rem; margin-bottom: 2rem; }
+          .spec-selector p { font-size: 0.75rem; margin-bottom: 0.75rem; }
+          .spec-options { gap: 0.5rem; margin-bottom: 2rem; }
+          .spec-option { padding: 0.6rem 1rem; border-radius: 12px; font-size: 0.85rem; }
+          .add-cart-btn { padding: 1rem; border-radius: 16px; font-size: 1rem; }
+        }
+
+        @media (max-width: 480px) {
+          .card-image { height: 220px; padding: 1.5rem; }
+          .card-info { padding: 1.25rem; }
+          .card-header h3 { font-size: 1.1rem; }
+          .card-price { font-size: 1.35rem; }
         }
       `}</style>
     </motion.div>
