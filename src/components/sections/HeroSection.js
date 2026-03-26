@@ -35,9 +35,9 @@ const HeroSection = () => {
             className="hero-title"
             variants={itemVariants}
           >
-            Experience the Luxury
+            Best quality gadgets for the most
             <br />
-            <span className="hero-title-gradient">with PASY Phones</span>
+            <span className="hero-title-gradient">Affordable prices</span>
           </motion.h1>
 
           <motion.p 
