@@ -13,6 +13,8 @@ import TrustSection from './components/sections/TrustSection';
 import TestimonialsSection from './components/sections/TestimonialsSection';
 import AboutSection from './components/sections/AboutSection';
 import Footer from './components/Footer';
+import AdminLogin from './components/AdminLogin';
+import AdminPanel from './components/AdminPanel';
 import './styles/globals.css';
 
 function App() {
@@ -22,6 +24,10 @@ function App() {
   const [showCheckout, setShowCheckout] = useState(false);
   const [activePayment, setActivePayment] = useState(null);
   const [showNotification, setShowNotification] = useState(false);
+
+  // Admin state
+  const [isAdmin, setIsAdmin] = useState(() => !!sessionStorage.getItem('admin_token'));
+  const [showAdminLogin, setShowAdminLogin] = useState(false);
 
   useEffect(() => {
     setTimeout(() => setLoading(false), 3000);
@@ -45,6 +51,24 @@ function App() {
       details: formData
     });
   };
+
+  // If admin is logged in, show admin panel
+  if (isAdmin) {
+    return (
+      <div>
+        <button 
+          onClick={() => {
+            sessionStorage.removeItem('admin_token');
+            setIsAdmin(false);
+          }}
+          style={{ margin: '10px', padding: '8px 16px', background: '#ff4444', color: 'white', border: 'none', borderRadius: '4px' }}
+        >
+          Logout Admin
+        </button>
+        <AdminPanel />
+      </div>
+    );
+  }
 
   return (
     <>
@@ -123,6 +147,50 @@ function App() {
 
             <ChatWidget />
             {showNotification && <FakeNotification />}
+
+            {/* Admin access button */}
+            <button
+              onClick={() => setShowAdminLogin(!showAdminLogin)}
+              style={{
+                position: 'fixed',
+                bottom: '20px',
+                left: '20px',
+                padding: '10px 15px',
+                background: '#333',
+                color: 'white',
+                border: 'none',
+                borderRadius: '5px',
+                cursor: 'pointer',
+                zIndex: 999
+              }}
+            >
+              Admin
+            </button>
+
+            {/* Admin login form */}
+            {showAdminLogin && (
+              <div style={{
+                position: 'fixed',
+                bottom: '80px',
+                left: '20px',
+                background: 'white',
+                padding: '20px',
+                borderRadius: '8px',
+                boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
+                zIndex: 1000
+              }}>
+                <AdminLogin onLogin={() => {
+                  setIsAdmin(true);
+                  setShowAdminLogin(false);
+                }} />
+                <button 
+                  onClick={() => setShowAdminLogin(false)}
+                  style={{ marginTop: '10px', background: 'none', border: 'none', cursor: 'pointer', textDecoration: 'underline' }}
+                >
+                  Cancel
+                </button>
+              </div>
+            )}
           </motion.div>
         )}
       </AnimatePresence>
